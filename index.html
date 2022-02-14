@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p9_js_events</title>
+<script src=" https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+     @import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+     
+    p{
+    display: flex;
+    font-family: "Work Sans", sans-serif;
+    font-style: medium;
+    font-size: 50pt;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    }
+
+    .container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    }
+    #uno, #dos{
+        display: flex;
+        width: 50%;
+        height: 100%;
+    }
+    #uno{
+    background-color: darkseagreen;
+    }
+    #dos{
+    background-color: gainsboro;
+    }
+    @media (max-width: 1024px){
+        .container{
+            flex-direction: column;
+        }
+        #uno, #dos{
+        width: 100%;
+        }
+    }
+</style>
+<script>
+     $(document).ready(function(){
+    //           $("#uno").hover(function(){
+    //               $("#uno p").toggle();
+    //           });
+    //           $("#dos").hover(function(){
+    //               $("#dos p").toggle();
+    //           })
+    //       });
+    // $("#uno p").on("click", function(){
+    //     $(this).css("font-size","15em");
+    //  });
+    // });
+    
+    // $("#dos").on("mouseenter", function(){
+    //     $(this).css("width" , "100%");
+    //     $("#uno").hide();
+    //     });
+
+        $("#uno").on("mouseup", function(){
+        $(this).css("background-color" , "black");
+        $("#uno p").css("color" , "white");
+        });
+        $("#uno").on("mousedown", function(){
+        $(this).css("background-color" , "white");
+        $("#uno p").css("color" , "black");
+        });
+    });
+</script>
+</head>
+<body>
+    <div class="container">
+        <div id="uno">
+            <p>hola</p>
+        </div>
+        <div id="dos">
+            <p>mundo</p>
+        </div>
+    </div>
+
+</body>
+</html>
